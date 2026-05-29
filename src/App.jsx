@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div className="game-container">
-      <h1 className="game-title">🐍 SNAKE</h1>
+      <h1 className="game-title"> SNAKE</h1>
       <Score score={score} boardSize={boardSizeName} difficulty={difficulty} />
       <Board snake={snake} food={food} gameOver={gameOver} boardSize={boardSize} />
       {gameOver && (
