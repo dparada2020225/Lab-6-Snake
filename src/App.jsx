@@ -7,22 +7,25 @@ import './App.css';
 function App() {
   const {
     snake, food, score, gameOver,
-    started, level, setStarted, restart,
+    started, boardSize,
+    boardSizeName, difficulty,
+    startGame, restart,
   } = useGameLoop();
 
   if (!started) {
-    return <StartScreen onStart={() => setStarted(true)} />;
+    return <StartScreen onStart={startGame} />;
   }
 
   return (
     <div className="game-container">
       <h1 className="game-title">🐍 SNAKE</h1>
-      <Score score={score} level={level} />
-      <Board snake={snake} food={food} gameOver={gameOver} />
+      <Score score={score} boardSize={boardSizeName} difficulty={difficulty} />
+      <Board snake={snake} food={food} gameOver={gameOver} boardSize={boardSize} />
       {gameOver && (
-        <button className="restart-btn" onClick={restart}>
-          REINICIAR
-        </button>
+        <div className="game-over-actions">
+          <button className="restart-btn" onClick={restart}>REINICIAR</button>
+          <button className="menu-btn" onClick={() => window.location.reload()}>MENÚ</button>
+        </div>
       )}
       {!gameOver && (
         <p className="hint">WASD / ↑↓←→ para mover</p>
