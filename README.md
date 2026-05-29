@@ -14,7 +14,7 @@ Abre http://localhost:5173 en tu navegador.
 ## Cómo jugar
 
 - Usa **WASD** o las **flechas del teclado** para mover la serpiente.
-- Come las manzanas 🍎 para crecer y sumar puntos.
+- Come para crecer y sumar puntos.
 - Cada **50 puntos** sube el nivel y la velocidad aumenta.
 - El juego termina si chocas con la pared o contigo mismo.
 

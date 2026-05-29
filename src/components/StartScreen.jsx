@@ -46,8 +46,8 @@ function StartScreen({ onStart }) {
         </div>
 
         <div className="controls-info">
-          <p>🎮 W-A-S-D o flechas para mover</p>
-          <p>🍎 Come manzanas para sumar puntos</p>
+          <p>W-A-S-D o flechas para mover</p>
+          <p>Come para sumar puntos</p>
         </div>
 
         <button className="start-btn" onClick={() => onStart(size, diff)}>
