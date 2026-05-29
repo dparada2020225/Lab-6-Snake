@@ -2,7 +2,11 @@ import { CELL_SIZE } from '../utils/gameUtils';
 
 function SnakeSegment({ segment, index, total }) {
   const isHead = index === 0;
-  const alpha  = 1 - (index / total) * 0.4;
+  const progress = index / total;
+  const alpha = 1 - progress * 0.55;
+
+  const headColor   = '#3a7a4a';
+  const bodyColor   = `rgba(45, 106, 63, ${alpha})`;
 
   const style = {
     position: 'absolute',
@@ -10,10 +14,10 @@ function SnakeSegment({ segment, index, total }) {
     top:             segment.y * CELL_SIZE + 1,
     width:           CELL_SIZE - 2,
     height:          CELL_SIZE - 2,
-    borderRadius:    isHead ? '6px' : '4px',
-    backgroundColor: isHead ? '#4ade80' : `rgba(34, 197, 94, ${alpha})`,
-    boxShadow:       isHead ? '0 0 10px #4ade80' : 'none',
-    transition:      'left 0.08s, top 0.08s',
+    borderRadius:    isHead ? '3px' : '2px',
+    backgroundColor: isHead ? headColor : bodyColor,
+    boxShadow:       isHead ? '0 0 6px rgba(58,122,74,0.6)' : 'none',
+    transition:      'left 0.07s linear, top 0.07s linear',
   };
 
   return <div style={style} />;
